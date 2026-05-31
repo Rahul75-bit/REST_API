@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-function CreateUser() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function CreateUser() {
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
 
-  const createUser = async () => {
-    const token = localStorage.getItem("token");
+  let createUser = async () => {
+    let token = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:8080/admin/users", {
+    let response = await fetch("http://localhost:8080/admin/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,4 +55,3 @@ function CreateUser() {
   );
 }
 
-export default CreateUser;
