@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-function UserProfile() {
-  const [profile, setProfile] = useState(null);
-  const [showButton, setShowButton] = useState(true);
+export default function UserProfile() {
+  let [profile, setProfile] = useState(null);
+  let [showButton, setShowButton] = useState(true);
 
-  const getProfile = async () => {
-    const token = localStorage.getItem("token");
+  let getProfile = async () => {
+    let token = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:8080/user/profile", {
+    let response = await fetch("http://localhost:8080/user/profile", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
-    const data = await response.json();
+    let data = await response.json();
 
     setProfile(data);
     setShowButton(false);
@@ -41,4 +41,3 @@ function UserProfile() {
   );
 }
 
-export default UserProfile;
