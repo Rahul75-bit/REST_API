@@ -4,8 +4,8 @@ import AdminUsers from "./components/AdminUsers";
 import CreateUser from "./components/CreateUser";
 import UserProfile from "./components/UserProfile";
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+export default function App() {
+  let [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="page">
@@ -25,4 +25,3 @@ function App() {
   );
 }
 
-export default App;
